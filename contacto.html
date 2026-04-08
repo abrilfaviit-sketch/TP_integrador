@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="c:\Users\Abril\Downloads\forms.png" type="image/x-icon">
     <title>Formulario</title>
 </head>
 <body>
     <main>
         <section id="contacto">
-            <h2>Contacto</h2>
+            <hr></hr>
+            <h2> <strong>Contacto</strong></h2>
+            <hr></hr>
             <form action="mailto:tu-email@ejemplo.com" method="post" enctype="text/plain"></form>
-                
-                <br><br>
+                <br>
+
                 <fieldset>
-                    <legend>Formulario de Contacto</legend>
-                    <label for="nombre">Nombre:</label><br>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required><br><br>
+            <form action="">
+                <label><strong>Nombre:</strong></label><br>
+                <input type="text" placeholder="Ingrese su nombre" required>
+                <br><br>
 
-                    <label for="nombre"> Apellido:</label><br>
-                    <input type="text" id="nombre" name="nombre"placeholder="Ingrese su apellido" required><br><br>
+                <label><strong>Apellido:</strong></label><br>
+                <input type="text" placeholder="Ingrese su apellido" required>
+                <br><br>
 
-                    <label for="email">Correo Electrónico:</label><br>
-                    <input type="email" id="email" name="email" placeholder="Ingrese su correo" required><br><br>
+                <label><strong>N.º de celular:</strong></label><br>
+                <input type="tel" pattern="[0-9]+" title="Solo se permiten números" placeholder="Ingrese su número " required>
+                <br><br>
 
-                    <label for="mensaje">Mensaje:</label><br>
-                    <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+                <label><strong>Correo:</strong></label><br>
+                <input type="email" placeholder="Ingrese su correo" required>
+                <br><br>
 
-                    <input type="submit" value="Enviar">
-                    <input type="reset" value="Borrar">
+                <label><strong>Mensaje:</strong></label><br>
+                <textarea name="mensaje" rows="6" cols="21" placeholder="Deje su mensajito divino"></textarea>
+                <br><br>
+                
+
+
+                <input type="submit" value="Enviar" style="background-color: green;">
+                <input type="reset" value="Borrar" style="background-color: rgb(224, 38, 38);">
                 </fieldset>
                 <br>
+                <fieldset>
                 <a href="index.html">Volver a la página principal</a>
+                </fieldset>
     </main>
 </body>
 </html>
