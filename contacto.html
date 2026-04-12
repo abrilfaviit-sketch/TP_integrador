@@ -38,14 +38,68 @@
                 <br><br>
                 
 
-
-                <input type="submit" value="Enviar" style="background-color: green;">
-                <input type="reset" value="Borrar" style="background-color: rgb(224, 38, 38);">
+                <input type="submit" value="Enviar" >
+                <input type="reset" value="Borrar">
                 </fieldset>
                 <br>
+                <br><br><br>
+                </form>
+                </section>
+
+                    <section id="Sobre tu carrera">
+                        <form action="">
+                <fieldset>
+                    <legend><strong>Sobre tu carrera</strong></legend>
+                    <p><strong>Turno de Combate:</strong></p>
+                     <input type="radio" id="manana" name="turno" value="manana">
+                    <label for="manana">Mañana (<i>6:00 AM</i>)</label><br>
+                     <input type="radio" id="tarde" name="turno" value="tarde">
+                     <label for="tarde">Tarde (<i>Energía alta</i>)</label><br>
+                    <input type="radio" id="noche" name="turno" value="noche">
+                    <label for="noche">Noche (<i>Modo búho</i>)</label><br><br>
+
+                    <label><strong>Nivel de preparación para el examen:</strong></label><br>
+                    <input type="range" name="preparacion" min="0" max="10" value="5">
+                    <br><br>
+
+                    <label><strong>Materia más difícil hasta ahora:</strong></label><br>
+                    <select name="materia">
+                    <option value="programacion">Programación</option>
+                    <option value="base-de-datos">Base de Datos</option>
+                    <option value="matematica">Matemática Discreta</option>
+                    <option value="ingles">Inglés Técnico</option>
+                    <input type="text" placeholder="Otra materia" name="otra-materia">
+                     </select>
+                        <br><br>
+
+                    <label><strong>Fecha de la próxima batalla (Parcial):</strong></label><br>
+                    <input type="date" name="fecha_examen">
+                    <br><br>
+                        
+                    <p><strong>Equipamiento listo:</strong></p>
+                    <input type="checkbox" id="resaltador" name="equipo" value="resaltador">
+                    <label for="resaltador">Resaltadores</label><br>
+                    <input type="checkbox" id="cafe" name="equipo" value="cafe">
+                    <label for="cafe">Café/Mate</label><br>
+                    <input type="checkbox" id="computadora" name="equipo" value="compu">
+                    <label for="computadora">Computadora</label><br>
+                    <input type="text" placeholder="Qué otra cosa necesitas?" name="Otro equipo">
+                    <br><br>
+
+                    <input type="submit" value="Enviar" >
+                    <input type="reset" value="Borrar" >
+                    </form>
+                  </section>
+
+
+                </fieldset>
+
+                    <br><br><br><br>
                 <fieldset>
                 <a href="index.html">Volver a la página principal</a>
                 </fieldset>
+                
+                
     </main>
 </body>
 </html>
