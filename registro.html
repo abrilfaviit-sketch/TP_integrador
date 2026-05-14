@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Restringido - Operación Graduación</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Imagenes/bienvenido.png" type="image/x-icon">
+</head>
+<body class="body-login">
+
+    <div class="login-container">
+        <header>
+            <h1>ACCESO RESTRINGIDO</h1>
+            <p>Identifíquese. Ingrese sus credenciales para acceder al manual de supervivencia a la universidad.</p>
+        </header>
+        
+        <form action="manual.html" class="formulario-inicio">
+            <div class="grupo-input">
+                <label for="usuario">Nombre:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ej: Abril" required>
+            </div>
+            
+            <div class="grupo-input">
+                <label for="pass">Código Secreto:</label>
+                <input type="password" id="pass" name="pass" required>
+            </div>
+            
+            <button type="submit" class="btn-mision">INICIAR MISIÓN</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; 
+    /* Body base sin colores para que el manual no se "contamine" */
+    background-color: #ffffff; 
+    color: #000000;
+}
+
+/* --- Estilos del login --- */
+.body-login {
+    /* Todo el 7estilo queda acá */
+    background-color: #121212; 
+    color: #00ff41; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra el login verticalmente en toda la pantalla */
+}
+
+/* Títulos y párrafos del login verdes */
+.body-login h1, .body-login p, .body-login label {
+    color: #00ff41;
+}
+
+.login-container {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border: 2px solid #00ff41;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.btn-mision {
+    background-color: #00ff41;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.btn-mision:hover {
+    background-color: white;
+    box-shadow: 0 0 10px white;
+}
