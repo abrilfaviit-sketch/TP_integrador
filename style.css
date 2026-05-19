@@ -2,55 +2,64 @@
     box-sizing: border-box; 
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace; 
-    /* Body base sin colores para que el manual no se "contamine" */
-    background-color: #ffffff; 
-    color: #000000;
-}
 
 /* --- Estilos del login --- */
 .body-login {
-    /* Todo el 7estilo queda acá */
+    /* Todo el estilo queda acá */
     background-color: #121212; 
     color: #00ff41; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Centra el login verticalmente en toda la pantalla */
+    height: 100vh; 
+    background-image: url('gif/cosmos_1577232550.gif'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+
 /* Títulos y párrafos del login verdes */
-.body-login h1, .body-login p, .body-login label {
+.body-login h1, .body-login p {
     color: #00ff41;
+}
+
+.body-login label{
+    color: #02200a;
 }
 
 .login-container {
     background-color: #1a1a1a;
     padding: 40px;
-    border: 2px solid #00ff41;
+    border: 2px solid #023f11;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-    max-width: 400px;
-    border-radius: 5px;
+    max-width: 500px;
 }
 
 .grupo-input {
     margin-bottom: 20px;
     text-align: left;
+    display: block;      /* ¡La clave! Hace que el título ocupe su propia línea */
+    margin-bottom: 8px;  /* Le da un espacio lindo hacia abajo para que no sople al recuadro */
+
 }
 
 input {
+    display: block;
     width: 100%;
     padding: 10px;
     background: #000;
-    border: 1px solid #00ff41;
+    border: 1px solid #02300d;
     color: #00ff41;
     margin-top: 5px;
     border-radius: 15px;
+}
+
+#codigo{
+    max-width: 150px; 
 }
 
 .btn-mision {
@@ -67,5 +76,24 @@ input {
 
 .btn-mision:hover {
     background-color: white;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 40px rgb(5, 0, 0);
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; 
+    /* Body base sin colores para que el manual no se "contamine" */
+    background-color: #ffffff; 
+    color: #000000;
+}
+
+h1{
+    color: #00ff41;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+
+
