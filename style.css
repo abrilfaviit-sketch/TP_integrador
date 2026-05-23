@@ -1,13 +1,25 @@
+:root{
+    --color:#000;
+    --color-fondo: #121212;
+    --color-fondo2: #1a1a1a;
+    --color-texto: #00ff41;
+    --color-texto2: #dce4de;
+    --color-borde: #023f11;
+    --color-borde2: #02300d;
+    --color-box-shadow: rgb(241,245,242);
+    --color-box-shadow2: rgba(0, 255, 65, 0.3);
+    --color-box-shadow3: rgba(0, 255, 65, 0.2);
+}
+
 * {
     box-sizing: border-box; 
 }
 
 
-/* --- Estilos del login --- */
+/* Estilos del login  */
 .body-login {
-    /* Todo el estilo queda acá */
-    background-color: #121212; 
-    color: #00ff41; 
+    background-color: var(--color-fondo); 
+    color: var(--color-texto); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,28 +34,27 @@
 
 /* Títulos y párrafos del login verdes */
 .body-login h1, .body-login p {
-    color: #00ff41;
+    color: var(--color-texto);
 }
 
 .body-login label{
-    color: #02200a;
+    color: var(--color-texto2);
 }
 
 .login-container {
-    background-color: #1a1a1a;
+    background-color: var(--color-fondo2);
     padding: 40px;
-    border: 2px solid #023f11;
+    border: 2px solid var(--color-borde2);
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 20px var(--color-box-shadow3);
     max-width: 500px;
 }
 
 .grupo-input {
     margin-bottom: 20px;
     text-align: left;
-    display: block;      /* ¡La clave! Hace que el título ocupe su propia línea */
-    margin-bottom: 8px;  /* Le da un espacio lindo hacia abajo para que no sople al recuadro */
+    display: block;      
 
 }
 
@@ -51,9 +62,9 @@ input {
     display: block;
     width: 100%;
     padding: 10px;
-    background: #000;
-    border: 1px solid #02300d;
-    color: #00ff41;
+    background:var(--color);
+    border: 1px solid var(--color-borde2);
+    color: var(--color-texto);
     margin-top: 5px;
     border-radius: 15px;
 }
@@ -63,8 +74,8 @@ input {
 }
 
 .btn-mision {
-    background-color: #00ff41;
-    color: black;
+    background-color: var(--color-texto);
+    color: var(--color);
     border: none;
     padding: 15px 30px;
     font-weight: bold;
@@ -76,24 +87,192 @@ input {
 
 .btn-mision:hover {
     background-color: white;
-    box-shadow: 0 0 40px rgb(5, 0, 0);
+    box-shadow: 0 0 40px var(--color-box-shadow);
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace; 
-    /* Body base sin colores para que el manual no se "contamine" */
+    /* Body base sin colores para que el manual no se contamine */
     background-color: #ffffff; 
     color: #000000;
 }
 
 h1{
-    color: #00ff41;
+    color: var(--color-texto);
     text-align: center;
     text-decoration: underline;
 
 }
 
+/* Estilos generales de la página */
+.contacto-formulario {
+    background-color: var(--color-fondo); 
+    color: var(--color-texto); 
+    height: 100vh;
+    background-image: url('gif/cosmos_1577232550.gif'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: monospace; 
+}
 
 
+/* Estilo para los dos formularios */
+form, .contacto {
+    max-width: 450px; 
+    margin: 40px auto; 
+    background-color: rgba(20, 20, 20, 0.95); 
+    color: var(--color-texto);
+    border: 2px solid var(--color-texto);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px var(--color-box-shadow2); 
+}
+
+/* Títulos principales */
+h2.contacto, legend {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+}
+
+/*Control de renglones  */
+form > label, form > p {
+    display: block; 
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Estilos para los campos de texto comunes y selects */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    border: 1px solid var(--color-borde2);
+    color: var(--color-texto);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+textarea {
+    display: block;
+    width: 100%; 
+    padding: 12px;
+    background-color: #000000;
+    border: 1px solid var(--color-borde2);
+    color: var(--color-texto);
+    border-radius: 10px;
+    resize: vertical; 
+    margin-bottom: 15px;
+}
+
+/* Botones Enviar y Borrar  */
+input[type="submit"],
+input[type="reset"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: var(--color-texto);
+    border: 2px solid var(--color-texto);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: var(--color-texto);
+    color: #000000;
+    box-shadow: 0 0 15px var(--color-texto);
+}
+
+
+.opcion-bloque {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Para los textos que van al lado de los cuadraditos */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+/* Barra lateral del 2do formualrio personalizada */
+
+/* Ancho de la barra total */
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+/* Fondo de la barra */
+::-webkit-scrollbar-track {
+    background: var(--color-fondo); 
+}
+
+/* El que se mueve  */
+::-webkit-scrollbar-thumb {
+    background: var(--color-texto); 
+    border-radius: 10px; 
+    border: 2px solid  var(--color-fondo); 
+}
+
+/* Mouse por arriba */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; 
+    box-shadow: 0 0 10px var(--color-texto);
+}
+
+/* Contenedor separa el enlace del formulario */
+.contenedor-volver {
+    text-align: center;
+    margin-top: 5px; 
+    margin-bottom: 20px; 
+}
+
+/*  Botón de volver  */
+.btn-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color-texto);
+    text-decoration: none; 
+    border: 1px dashed var(--color-texto); 
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: rgba(0, 255, 65, 0.1); 
+    box-shadow: 0 0 10px var(--color-texto);
+    transform: scale(1.05);
+}
