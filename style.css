@@ -1,5 +1,6 @@
 :root{
     --color:#000;
+    --color2:#ffffff;
     --color-fondo: #121212;
     --color-fondo2: #1a1a1a;
     --color-texto: #00ff41;
@@ -9,6 +10,7 @@
     --color-box-shadow: rgb(241,245,242);
     --color-box-shadow2: rgba(0, 255, 65, 0.3);
     --color-box-shadow3: rgba(0, 255, 65, 0.2);
+    --color-body: #1e222b;
 }
 
 * {
@@ -95,8 +97,93 @@ body {
     padding: 0;
     font-family: 'Courier New', Courier, monospace; 
     /* Body base sin colores para que el manual no se contamine */
-    background-color: #ffffff; 
-    color: #000000;
+    background-color: var(--color-body); 
+    color: var(--color);
+}
+
+/* Estilos  del Encabezado  */
+.encabezado-manual {
+    background-color: #161920;
+    padding: 40px 20px;
+    text-align: center; /* Para centrar el título, la frase y el audio automáticamente */
+    border-bottom: 3px solid var(--color-texto);
+}
+
+/* El título en verde */
+.titulo-principal {
+    color: var(--color-texto);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--color-box-shadow2);
+}
+
+.texto{
+    color: var(--color-texto2);
+}
+
+.frase-audio, .bajada-texto {
+    color: #a0a5b5;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.reproductor-central {
+    margin: 15px auto 25px auto;
+    display: block; /*Para centrar el reproductor */
+    opacity: 0.6; /*Hace q sea semi-transparente */
+    filter:invert(90%) hue-rotate(90deg); 
+    transition: all 0.4s ease;
+}
+
+.reproductor-central:hover {
+    opacity: 1; /*Cuando paso el mouse brilla*/
+}
+
+
+.menu-navegacion ul {
+    display: flex;             
+    justify-content: center;   
+    gap: 15px;                 
+    list-style: none;          
+    padding: 0;
+    margin-top: 35px;
+    flex-wrap: wrap;           
+}
+
+/* Estilo para los enlaces */
+.menu-navegacion ul li a {
+    color: var(--color-texto);   
+    text-decoration: none; /*Le saca el subrayado a los enlaces */
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    border: 2px solid var(--color-texto);
+    padding: 12px 22px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+   /* text-transform: uppercase; 
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-texto);    
+    padding: 8px 16px;            
+    border-radius: 15px;           
+    display: inline-block;        
+    transition: all 0.4s ease;*/
+    
+}
+
+/* Efecto de los enlaces*/
+.menu-navegacion ul li a:hover {
+    color: var(--color2);    
+    background-color: var(--color-texto);
+    box-shadow: 0 0 15px var(--color2);
+    color: #161920;
+    transform: translateY(-4px);
+    
 }
 
 h1{
