@@ -165,15 +165,6 @@ body {
     border-radius: 20px;
     display: inline-block;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    
-   /* text-transform: uppercase; 
-    transition: all 0.3s ease;
-    border: 1px solid var(--color-texto);    
-    padding: 8px 16px;            
-    border-radius: 15px;           
-    display: inline-block;        
-    transition: all 0.4s ease;*/
-    
 }
 
 /* Efecto de los enlaces*/
@@ -183,7 +174,129 @@ body {
     box-shadow: 0 0 15px var(--color2);
     color: #161920;
     transform: translateY(-4px);
-    
+}
+
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 30px; 
+    max-width: 1400px; 
+    margin: 40px auto; 
+    padding: 0 20px;
+}
+
+/*Propagandas laterales*/
+.propaganda-lateral {
+    background-color: #0b0c10; 
+    border: 1px dashed var(--color-texto); 
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    height: fit-content; 
+    position: sticky;
+    top: 30px; 
+}
+
+.btn-biblioteca {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+.btn-biblioteca:hover {
+    text-decoration: underline;
+    color: var(--color-texto2);
+    box-shadow: 0 0 10px var(--color-texto);
+}
+
+.bloque-anuncio {
+    padding: 10px 0;
+}
+
+.linea-anuncio {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 255, 65, 0.5), transparent);
+    margin: 15px 0;
+}
+
+.propaganda-lateral h2 {
+    color: var(--color-texto);
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 12px;
+}
+
+.propaganda-lateral p {
+    color: #888888;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+
+/* Para que las imágenes de anuncios no rompan el lateral */
+.propaganda-lateral img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 4px;
+    filter: grayscale(30%); 
+    transition: all 0.3s ease;
+}
+
+/* Cuando pasás el mouse... */
+.propaganda-lateral img:hover {
+    filter: grayscale(0%);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+}
+
+/*Bloque central*/ 
+.contenido-manual {
+    background-color: #161920; 
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #222222;
+}
+
+/* Estilos para los títulos de las escenas */
+.contenido-manual section h2 {
+    color: var(--color-texto);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--color-texto); 
+    padding-left: 15px;
+}
+
+/* Títulos de los artículos */
+.contenido-manual article h3 {
+    color: var(--color2);
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin: 20px 0 10px 0;
+}
+
+/* Los textos comunes dentro del manual */
+.contenido-manual p {
+    color: #cccccc; 
+    font-family: sans-serif;
+    line-height: 1.6; /* Para separar los renglones */
+    margin-bottom: 15px;
+}
+
+/*Control de imagenes dentro del manual*/
+.contenido-manual img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 6px;
+    margin: 15px 0;
+    border: 1px solid #333333;
+}
+
+/* Cyberpunk*/
+.separador-cyber {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-texto), transparent);
+    margin: 50px 0;
 }
 
 h1{
