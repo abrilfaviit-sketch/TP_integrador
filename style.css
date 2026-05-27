@@ -390,6 +390,182 @@ body {
     font-style: normal; 
     text-shadow: 0 0 5px var(--color-box-shadow2);
 }
+/*LineaS de código para la sección 3*/
+
+/* Ajuste para los textos sueltos*/
+.contenido-manual section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Diseño de la tabla */
+.contenido-manual table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 30px 0;
+    background-color: #0b0c10;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    border: 1px solid var(--color-box-shadow2); 
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.05);
+}
+
+/* Encabezados de la tabla (Técnica / Descripción) */
+.contenido-manual th {
+    background-color: rgba(0, 255, 65, 0.1); 
+    color: var(--color-texto);
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 12px;
+    border: 1px solid var(--color-box-shadow2);
+    text-align: left;
+}
+
+/* Celdas de la tabla */
+.contenido-manual td {
+    padding: 12px;
+    color: #dddddd;
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    background-color: transparent; 
+    transition: background-color 0.3s ease;
+}
+
+/* Al pasar el mouse: */
+.contenido-manual tr:hover td {
+    background-color: rgba(0, 255, 65, 0.08); 
+    color: var(--color2);
+}
+
+/* Primera columna */
+.contenido-manual td:first-child {
+    font-weight: bold;
+    color: var(--color2);
+    width: 30%; 
+}
+
+/*Líneas de código de la escena 4 */ 
+
+/* Contenedor general para la lista de armas */
+.inventario-armas {
+    margin-top: 25px;
+}
+
+/* Cada ítem del inventario */
+.arma-item {
+    background: linear-gradient(90deg, var(--color-box-shadow2) 0%, transparent 100%);
+    border-left: 3px solid var(--color-texto); 
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+}
+
+/* Al pasar el mouse: */ 
+.arma-item:hover {
+    background: linear-gradient(90deg, rgba(0, 255, 65, 0.08) 0%, transparent 100%);
+    box-shadow: -5px 0 10px var(--color-box-shadow3);
+}
+
+/* El nombre del objeto*/
+.arma-item strong {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color2);
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* Para resaltar la primera palabra  */
+.arma-item strong::after {
+    content: " ⚔️"; 
+    font-size: 0.9rem;
+}
+
+/* La descripción */
+.arma-item p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.15rem;
+    color: #dddddd;
+    margin: 0;
+    line-height: 1.5;
+}
+/*Lineas de código para el final de la página*/
+
+#Datos.pie-manual {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    background-color: #0b0c10;
+    border-top: 1px dashed var(--color-box-shadow2);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Estilo para los textos */
+#Datos.pie-manual p {
+    color: #aaaaaa;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Para que las etiquetas strong brillen */
+#Datos.pie-manual p strong {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-texto);
+    letter-spacing: 0.5px;
+}
+
+/* Etiquetas em en blanco */
+#Datos.pie-manual p em {
+    color: var(--color2);
+    font-style: normal; 
+}
+
+/* Estilo para el renglón de la nota */
+#Datos.pie-manual .nota-sistema u {
+    text-decoration: none; 
+    border-bottom: 1px solid var(--color-texto); 
+}
+
+/* La frase de buena suerte en mayúsculas y Orbitron */
+#Datos.pie-manual .pie-final-mision {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color2);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    text-shadow: 0 0 8px var(--color-box-shadow3);
+}
+
+/* Botón para volver al inicio */
+#Datos.pie-manual .boton-subir {
+    display: inline-block;
+    margin-top: 25px;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-texto);
+    text-decoration: none; 
+    border: 1px solid var(--color-texto);
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+/* Efecto mouse */
+#Datos.pie-manual .boton-subir:hover {
+    background-color: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+    color: var(--color2);
+    transform: translateY(-2px); 
+}
+/*Aca las flechas*/
+
 
 h1{
     color: var(--color-texto);
@@ -539,7 +715,7 @@ input[type="checkbox"] + label {
 
 /* Mouse por arriba */
 ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff; 
+    background: var(--color2); 
     box-shadow: 0 0 10px var(--color-texto);
 }
 
