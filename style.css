@@ -564,7 +564,138 @@ body {
     color: var(--color2);
     transform: translateY(-2px); 
 }
-/*Aca las flechas*/
+ /* Acá van las flechas de volver al inicio*/
+
+/* Para centrar la flecha al final de cada escena */
+.contenedor-subir {
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+/* La flecha */
+.flecha-subir {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    color: rgba(0, 255, 65, 0.4); 
+    text-decoration: none;
+    font-size: 1.8rem; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto mouse */
+.flecha-subir:hover {
+    color: var(--color-texto);
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+    transform: translateY(-4px); 
+}
+
+/*Media Queries para que el manual se vea bien en celulares y tablets*/
+@media screen and (max-width: 768px) {
+    
+    /* El contenedor que envuelve los asides y el centro se vuelve una sola columna */
+    .contenedor-principal {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Propagandas laterales y al centro a ocupar el 100% de la pantalla */
+    .propaganda-lateral,
+    .contenido-manual {
+        width: 100% !important;
+        margin: 15px 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* Las imágenes de los anuncios no se desborden de sus cajas */
+    .propaganda-lateral img,
+    .bloque-anuncio img {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/*Media queries para celulares*/
+@media screen and (max-width: 480px) {
+    
+    /* Para q' no se desborde mi contenedor general */
+    .contenedor-principal {
+        display: flex;
+        flex-direction: column; 
+        width: 100% !important;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Parqa q'las propagandas se acomoden*/
+    .propaganda-lateral {
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;      
+        position: static !important;  
+        margin: 20px 0 !important;
+        box-sizing: border-box;
+    }
+
+    /* Menú de navegación */
+    .menu-navegacion ul {
+        display: flex;
+        flex-direction: column; /* Apila los botones uno abajo del otro */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+    }
+
+    .menu-navegacion li {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .menu-navegacion a {
+        display: block;
+        padding: 12px 0;
+        width: 100%;
+        border-bottom: 1px dashed rgba(0, 255, 65, 0.2);
+    }
+
+    /* Afecta a la Escena 1 (Prólogo, Turno Tarde) y Escena 2 (Villanos) */
+    .contenedor-bloque {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    /* Ajuste la imagen para que se adapte al celular sin deformarse */
+    .contenedor-bloque img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-right: 0 !important; 
+        margin-bottom: 15px; 
+    }
+
+    /* El bloque de texto pasa a ocupar todo el ancho disponible */
+    .texto-articulo {
+        width: 100% !important;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    /* Ajuste de las celdas de la tabla táctica para pantallas chicas */
+    .contenido-manual table th, 
+    .contenido-manual table td {
+        font-size: 0.9rem;
+        padding: 8px 5px;
+    }
+}
 
 
 h1{
