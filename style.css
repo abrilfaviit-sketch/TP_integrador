@@ -517,7 +517,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Etiquetas em en blanco */
+/* Etiquetas en blanco */
 #Datos.pie-manual p em {
     color: var(--color2);
     font-style: normal; 
@@ -631,7 +631,7 @@ body {
         box-sizing: border-box;
     }
 
-    /* Parqa q'las propagandas se acomoden*/
+    /* Para q' las propagandas se acomoden*/
     .propaganda-lateral {
         width: 100% !important;
         max-width: 100% !important;

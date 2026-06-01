@@ -54,3 +54,6 @@ Pantalla de la guía:
 
 Formulario:
 ![alt text](Capturas/Formulario.png)
+
+# Las tecnologías utilizadas:
+Las tecnologías que ocupe para este proyecto integrador fueron HTML y CSS
