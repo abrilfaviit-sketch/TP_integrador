@@ -25,3 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+/*sistema de acceso*/
+function inicializarLogin() {
+    const formularioLogin = document.querySelector(".formulario-inicio");
+    
+    /*primer evento: submit */
+    if (formularioLogin) {
+        formularioLogin.addEventListener("submit", () => {
+            const usuario = document.getElementById("usuario").value;
+            /*Se guarda el nombre en el almacenamiento local para usarlo en el manual*/
+            localStorage.setItem("nombreAgente", usuario);
+        });
+    }
+}
+
