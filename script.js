@@ -40,3 +40,46 @@ function inicializarLogin() {
     }
 }
 
+
+/*Manual principal y funcionalidad dinamica*/
+function inicializarManual() {
+    /*Reemplaza el texto introductorio con el nombre del usuario*/
+    const nombreGuardado = localStorage.getItem("nombreAgente") || "Agente Anónimo";
+    const bajadaTexto = document.querySelector(".bajada-texto");
+    
+    /*DOM 1: modifica el texto de bienvenida personalizado*/
+    if (bajadaTexto) {
+        bajadaTexto.innerHTML = `Bienvenida/o, <strong>Agente ${nombreGuardado}</strong>. En un mundo de apuntes infinitos, solo los mejores sobreviven.`;
+    }
+
+    /* Generador interactivo de consejos*/
+    const panelConsejos = document.querySelector(".panel-consejos");
+    
+    if (panelConsejos) {
+        // DOM 2: Crear elementos dinámicamente*/
+        const botonConsejo = document.createElement("button");
+        botonConsejo.textContent = "GENERAR CONSEJO DE MISIÓN ALEATORIO";
+        botonConsejo.className = "btn-mision"; 
+        botonConsejo.style.marginTop = "15px";
+        
+        const contenedorTextoConsejo = document.createElement("p");
+        contenedorTextoConsejo.style.fontStyle = "italic";
+        contenedorTextoConsejo.style.color = "#00ffcc"; 
+        contenedorTextoConsejo.style.marginTop = "10px";
+
+        panelConsejos.appendChild(botonConsejo);
+        panelConsejos.appendChild(contenedorTextoConsejo);
+
+        // Segundo evento: click (Para disparar la función del array)*/
+        botonConsejo.addEventListener("click", () => {
+            /*Invoca a otra función pasándole el array*/
+            mostrarConsejoAleatorio(consejosSupervivencia, contenedorTextoConsejo);
+        });
+    }
+}
+
+/* Procesar y calcular índice aleatorio del array*/
+function mostrarConsejoAleatorio(lista, elementoDestino) {
+    const indiceAleatorio = Math.floor(Math.random() * lista.length);
+    elementoDestino.textContent = `💡 Consejo de campo: "${lista[indiceAleatorio]}"`;
+}
