@@ -83,3 +83,46 @@ function mostrarConsejoAleatorio(lista, elementoDestino) {
     const indiceAleatorio = Math.floor(Math.random() * lista.length);
     elementoDestino.textContent = `💡 Consejo de campo: "${lista[indiceAleatorio]}"`;
 }
+
+
+
+
+/*validación y manejo de errores (formulario contacto)*/
+function inicializarContacto() {
+    const formularioContacto = document.querySelector("#contacto form");
+    const inputCelular = document.querySelector("input[type='tel']");
+
+    /*Tercer evento: input (Detecta cuando el usuario escriba en tiempo real)*/
+    if (inputCelular) {
+        inputCelular.addEventListener("input", () => {
+            inputCelular.value = inputCelular.value.replace(/[^0-9]/g, '');
+        });
+    }
+
+    if (formularioContacto) {
+        formularioContacto.addEventListener("submit", (e) => {
+            e.preventDefault(); 
+            
+            /*validación y manejo de errores*/
+            try {
+                const nombre = formularioContacto.querySelector("input[placeholder='Ingrese su nombre']").value.trim();
+                const apellido = formularioContacto.querySelector("input[placeholder='Ingrese su apellido']").value.trim();
+                const mensaje = formularioContacto.querySelector("textarea").value.trim();
+
+                if (nombre === "" || apellido === "") {
+                    throw new Error("Los campos de identidad obligatorios están vacíos.");
+                }
+                
+                if (mensaje.length < 5) {
+                    throw new Error("El mensaje secreto es demasiado corto. ¡Dejá un mensajito divino más detallado!");
+                }
+
+                alert(`¡Transmisión enviada con éxito, Agente ${nombre}! Tu reporte fue subido a la base de datos.`);
+                formularioContacto.reset();
+
+            } catch (error) {
+                alert(`⚠️ ERROR DE TRÁNSITO: ${error.message}`);
+            }
+        });
+    }
+}
