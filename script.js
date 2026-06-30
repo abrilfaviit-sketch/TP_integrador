@@ -102,7 +102,7 @@ function inicializarContacto() {
     if (formularioContacto) {
         formularioContacto.addEventListener("submit", (e) => {
             e.preventDefault(); 
-            
+
             /*validación y manejo de errores*/
             try {
                 const nombre = formularioContacto.querySelector("input[placeholder='Ingrese su nombre']").value.trim();
@@ -125,4 +125,31 @@ function inicializarContacto() {
             }
         });
     }
+}
+
+/*Aca va la interacción con los villanos*/
+
+/*Escuchador para los botones de filtro (Poné esto dentro de donde inicializás el manual)*/
+const botonesFiltro = document.querySelectorAll(".btn-filtro");
+botonesFiltro.forEach(boton => {
+    /*evento Click en los botones de filtro*/
+    boton.addEventListener("click", () => {
+        const categoria = boton.getAttribute("data-villano");
+        filtrarEnemigos(categoria);
+    });
+});
+
+/* Función encargada de ocultar o mostrar los artículos usando estilos en línea*/
+function filtrarEnemigos(tipoVillano) {
+    const articulosVillanos = document.querySelectorAll(".bloque-villano");
+    
+    articulosVillanos.forEach(articulo => {
+        const tipoArticulo = articulo.getAttribute("data-tipo");
+        
+        if (tipoVillano === "todos" || tipoArticulo === tipoVillano) {
+            articulo.style.display = "block"; /* Se muestra (Estilo en línea)*/
+        } else {
+            articulo.style.display = "none";  /*Se oculta (Estilo en línea)*/
+        }
+    });
 }
