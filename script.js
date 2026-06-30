@@ -90,6 +90,11 @@ function mostrarConsejoAleatorio(lista, elementoDestino) {
         inputBuscar.addEventListener("keyup", () => {
             ejecutarBusquedaGlobal(inputBuscar.value.toLowerCase());
         });
+        /* Evento: Botón del Calculador Académico*/
+    const btnCalcular = document.getElementById("btn-calcular-estado");
+    if (btnCalcular) {
+        btnCalcular.addEventListener("click", calcularEstadoAcademico);
+    }
     }
 
 
@@ -176,4 +181,58 @@ function ejecutarBusquedaGlobal(palabraClave) {
             bloque.style.display = "none"; /*Oculta el bloque que no coincide*/
         }
     });
+}
+
+/*Boton de calcular promedio*/
+function calcularEstadoAcademico() {
+    /* Para capturar los valores de los inputs y los paso a números reales*/
+    const nota1 = parseFloat(document.getElementById("nota-parcial1").value);
+    const nota2 = parseFloat(document.getElementById("nota-parcial2").value);
+    const asistencia = parseFloat(document.getElementById("porcentaje-asistencia").value);
+    const cajaResultado = document.getElementById("resultado-estado");
+
+    /* Verifica que el usuario haya completado todos los campos correctamente*/
+    if (isNaN(nota1) || isNaN(nota2) || isNaN(asistencia) || 
+        nota1 < 1 || nota1 > 10 || nota2 < 1 || nota2 > 10 || asistencia < 0 || asistencia > 100) {
+        
+        cajaResultado.style.display = "block";
+        cajaResultado.style.backgroundColor = "#2a1215";
+        cajaResultado.style.color = "#ff4a4a";
+        cajaResultado.style.border = "1px solid #ff4a4a";
+        cajaResultado.textContent = "⚠️ ERROR: Por favor, ingresá notas válidas (1 al 10) y asistencia (0 al 100%).";
+        return; 
+    }
+
+    /*Calculo el promedio de los dos parciales*/
+    const promedio = (nota1 + nota2) / 2;
+
+    /* Se evalua el estado según las reglas del manual*/
+    let estadoFinal = "";
+    let colorTexto = "";
+    let colorFondo = "";
+    let colorBorde = "";
+
+    if (promedio >= 8 && asistencia >= 80) {
+        estadoFinal = `🏆 ¡MISION CUMPLIDA! Estado: PROMOCIONADO. Promedio: ${promedio.toFixed(2)} | Asistencia: ${asistencia}%`;
+        colorTexto = "#00ffcc";
+        colorFondo = "#0c1f24";
+        colorBorde = "#00ffcc";
+    } else if (promedio >= 4 && asistencia >= 75) {
+        estadoFinal = `⚖️ ESTADO: REGULARIZA. Vas a rendir examen final. Promedio: ${promedio.toFixed(2)} | Asistencia: ${asistencia}%`;
+        colorTexto = "#ffcc00";
+        colorFondo = "#24210c";
+        colorBorde = "#ffcc00";
+    } else {
+        estadoFinal = `🚨 ALERTA: RECURSA EN LA PRÓXIMA MISIÓN. Promedio: ${promedio.toFixed(2)} o Asistencia: ${asistencia}% insuficientes.`;
+        colorTexto = "#ff4a4a"; 
+        colorFondo = "#2a1215";
+        colorBorde = "#ff4a4a";
+    }
+
+    /* Se muestra el resultado en la pantalla del manual*/
+    cajaResultado.style.display = "block";
+    cajaResultado.style.color = colorTexto;
+    cajaResultado.style.backgroundColor = colorFondo;
+    cajaResultado.style.border = `1px solid ${colorBorde}`;
+    cajaResultado.textContent = estadoFinal;
 }

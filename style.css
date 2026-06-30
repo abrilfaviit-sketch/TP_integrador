@@ -967,3 +967,90 @@ input[type="checkbox"] + label {
     color: #0b0f19;
     box-shadow: 0 0 15px var(--color-texto);
 }
+
+/*Botón de promedio */
+.seccion-calculador {
+    padding: 30px;
+    background-color: #0b0f19;
+    border: 3px solid var(--color-borde);
+    border-radius: 10px;
+    margin: 40px 0;
+    box-shadow: 0 0 20px var(--color-texto);
+}
+
+.formulario-calculador {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 25px 0;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-input label {
+    color: var(--color-texto);
+    font-family: monospace;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.grupo-input input {
+    background-color: #121824;
+    border: 1px solid var(--color-texto);
+    color: #fff;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.grupo-input input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 10px var(--color-texto2);
+}
+
+/* El botón para ejecutar la lógica matemática */
+.btn-mision {
+    background-color: transparent;
+    border: 2px solid var(--color-texto);
+    color: #00ffcc;
+    padding: 12px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-mision:hover {
+    background-color: var(--color-borde);
+    color: #0b0f19;
+    box-shadow: 0 0 15px var(--color-texto2);
+}
+
+/* Cartel de Promocionado, Regular o Recursa */
+.resultado-calculo-box {
+    margin-top: 25px;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    display: none; 
+    text-align: center;
+}
+.seccion-calculador p {
+    color: #fff; 
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}

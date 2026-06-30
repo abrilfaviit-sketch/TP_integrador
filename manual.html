@@ -30,6 +30,7 @@
                 <li><a href="#villanos">Los Villanos</a></li>
                 <li><a href="#entrenamiento">Entrenamiento</a></li>
                 <li><a href="#inventario">Equipamiento</a></li>
+                <li><a href="#simulador-academico">Calcular Estado</a></li>
                 <li><a href="#Datos">Datos del creador</a></li>
                 <li><a href="contacto.html">Formulario de contacto</a></li>
             </ul>
@@ -252,11 +253,37 @@
 
                 </div>
             </article>
-            
+
             <div class="contenedor-subir">
                     <a href="#Inicio" class="flecha-subir" title="Volver al Inicio">▲</a>
                 </div>
         </section>
+
+         <section id="simulador-academico" class="seccion-calculador">
+                <h2>Sección Especial: <em>Terminal de Estado Académico</em></h2>
+                <p>Ingresá tus datos de cursada para calcular tu condición actual en la materia.</p>
+    
+                <div class="formulario-calculador">
+                     <div class="grupo-input">
+                        <label for="nota-parcial1">Nota Primer Parcial:</label>
+                        <input type="number" id="nota-parcial1" min="1" max="10" placeholder="Ej: 8">
+                </div>
+        
+                <div class="grupo-input">
+                         <label for="nota-parcial2">Nota Segundo Parcial:</label>
+                         <input type="number" id="nota-parcial2" min="1" max="10" placeholder="Ej: 7">
+                 </div>
+        
+                 <div class="grupo-input">
+                         <label for="porcentaje-asistencia">Asistencia (%):</label>
+                        <input type="number" id="porcentaje-asistencia" min="0" max="100" placeholder="Ej: 85">
+                </div>
+        
+                <button type="button" id="btn-calcular-estado" class="btn-mision">EVALUAR CONDICIÓN</button>
+                </div>
+    
+                <div id="resultado-estado" class="resultado-calculo-box"></div>
+                </section>
 
         </div> <aside class="propaganda-lateral derecho">
             <h2>¡Cansado de la universidad?!</h2>
