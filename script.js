@@ -168,7 +168,7 @@ function filtrarEnemigos(tipoVillano) {
 /*Lupita*/
 function ejecutarBusquedaGlobal(palabraClave) {
     /*Pongo todos los artículos y bloques grandes de contenido del manual*/
-    const bloquesContenido = document.querySelectorAll(".contenido-manual article, .panel-consejos");
+    const bloquesContenido = document.querySelectorAll(".contenido-manual article, .panel-consejos, .seccion-calculador");
 
     bloquesContenido.forEach(bloque => {
         /*Paso todo el texto del bloque a minúsculas para que no importen las mayúsculas*/
