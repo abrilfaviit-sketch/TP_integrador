@@ -1054,3 +1054,13 @@ input[type="checkbox"] + label {
     margin-bottom: 20px;
     opacity: 0.9;
 }
+
+/*le doy vida al medidor de estudio*/
+/*al ir midiendo el nivel de estudio que marque el usuario, lo que va a hacer es ir tirando frases dependiendo su nivel*/
+#mensaje-preparacion {
+    font-family: monospace;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}

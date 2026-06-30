@@ -236,3 +236,31 @@ function calcularEstadoAcademico() {
     cajaResultado.style.border = `1px solid ${colorBorde}`;
     cajaResultado.textContent = estadoFinal;
 }
+
+/*Para el medidor de estudio*/
+/*le tuve que poner un escuchador independiente, ya que si estaba arriba en inicializarManual no funcionaba*/
+document.addEventListener("DOMContentLoaded", function() {
+    const barraNivel = document.getElementById("nivel-preparacion");
+    const cajaMensaje = document.getElementById("mensaje-preparacion");
+
+    if (barraNivel && cajaMensaje) {
+        /* Para que escuche el movimiento en tiempo real*/
+        barraNivel.addEventListener("input", function() {
+            const valor = parseInt(barraNivel.value);
+
+            if (valor >= 85) {
+                cajaMensaje.textContent = "⚡ ¡Wowww, genial! Estás muy preparado para el combate. ¡A romperla!";
+                cajaMensaje.style.color = "#00ffcc"; 
+            } else if (valor >= 50) {
+                cajaMensaje.textContent = "⚔️ Nivel aceptable. Tenés estrategia, pero no te confíes en la batalla.";
+                cajaMensaje.style.color = "#ffcc00"; 
+            } else {
+                cajaMensaje.textContent = "🚨 ¡Alerta! Vamos, estudiá un poco más que el enemigo no perdona.";
+                cajaMensaje.style.color = "#ff4a4a"; 
+            }
+        });
+
+        /* Ejecuta una vez al cargar para que muestre el mensaje inicial (50%)*/
+        barraNivel.dispatchEvent(new Event("input"));
+    }
+});
