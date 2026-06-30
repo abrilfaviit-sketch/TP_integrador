@@ -57,3 +57,49 @@ Formulario:
 
 # Las tecnologías utilizadas:
 Las tecnologías que ocupe para este proyecto integrador fueron HTML y CSS
+
+
+# Ultimas actualizaciones del integrador 
+En esta tercera etapa, el sitio dejó de ser estático y sumó interactividad pura mediante **JavaScript y  manipulación del DOM**, mejorando por completo la experiencia del usuario.
+
+# Tecnologías Utilizadas
+-HTML5
+-CSS3
+-JavaScript
+
+# Funcionalidades Dinámicas Implementadas
+
+# 1. Sistema de Acceso con Persistencia (Login)
+* Al iniciar sesión, el sistema captura el nombre ingresado por el usuario mediante el evento `submit`. 
+Usa `localStorage` para guardar el nombre, permitiendo que el manual le dé una bienvenida personalizada en la página principal como un "Agente" oficial.
+
+# 2. Generador Aleatorio de Consejos (Manejo de Arrays)
+* Creé un array con consejos de supervivencia reales.
+A través del DOM, el script genera dinámicamente un botón de misión y un párrafo de texto. Al hacer `click`, calcula un índice aleatorio e inserta el consejo en pantalla.
+
+# 3. Buscador Global en Tiempo Real
+* Implementé un motor de búsqueda con el evento `keyup`. A medida que el usuario escribe, el script evalúa el texto y oculta o muestra los artículos y bloques del manual en vivo.
+
+# 4. Filtro de Enemigos Académicos
+* Para la sección de "Villanos", agregué botones de filtrado que escuchan el evento `click`. Usando estilos en línea, la página oculta o muestra las tarjetas según la categoría seleccionada (o muestra "todos").
+
+# 5. Calculador del Estado Académico
+* Una herramienta donde el estudiante ingresa las notas de sus parciales y su porcentaje de asistencia.
+Al presionar el botón, el sistema procesa los datos y devuelve un cuadro de resultado dinámico con colores específicos: **Promocionado** (verde neón), **Regular** (amarillo) o **Recursando** (rojo).
+
+# 6. Medidor de Preparación en Tiempo Real
+* En la sección de contacto, incluí una barra de rango (`<input type="range">`). Con el evento `input`, el script detecta el movimiento en tiempo real y actualiza un mensaje motivador y su color según el nivel de estudio seleccionado.
+
+# 7. Validación del Formulario de Contacto y Manejo de Errores
+* Limpieza en vivo: El campo de celular rechaza automáticamente cualquier carácter que no sea un número.
+* Estructura Try...Catch: Al intentar enviar el formulario, el sistema valida que los campos obligatorios no estén vacíos y que el mensaje tenga una longitud mínima. Si algo falla, lanza una excepción personalizada con un mensaje de alerta; si está todo bien, confirma el envío exitoso.
+
+
+# Capturas de pantalla de la web actualizada
+![alt text](Botones.png)
+![alt text](Busqueda.png)
+![alt text](Calculador.png)
+![alt text](Consejos.png)
+![alt text](Medidor.png)
+![alt text](Mensaje.png)
+![alt text](Menú.png)
