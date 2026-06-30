@@ -888,8 +888,8 @@ input[type="checkbox"] + label {
 
 .btn-filtro {
     background-color: #0b0f19; 
-    color: #00ffcc;           
-    border: 2px solid #00ffcc; 
+    color: var(--color-texto2);           
+    border: 2px solid var(--color-texto2); 
     padding: 10px 20px;
     font-weight: bold;
     text-transform: uppercase;
@@ -900,13 +900,70 @@ input[type="checkbox"] + label {
 
 /*Efecto mouse*/
 .btn-filtro:hover {
-    background-color: #00ffcc; 
+    background-color: var(--color-texto); 
     color: #0b0f19;            
-    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8); 
+    box-shadow: 0 0 25px var(--color-texto);
     transform: translateY(-3px);
 }
 
 /* Efecto cuando hacen click */
 .btn-filtro:active {
     transform: translateY(-1px);
+}
+
+
+/*Lupita*/
+.contenedor-buscador-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; 
+    width: 100%;
+}
+
+.buscador-global {
+    display: flex;
+    align-items: stretch; /*Para que el input y el botón midan exactamente lo mismo de alto */
+    width: 100%;
+    max-width: 500px;    
+}
+
+.buscador-global input {
+    flex-grow: 1;
+    background-color: #0b0f19; 
+    border: 2px solid var(--color-texto); 
+    border-right: none;        
+    color: #fff;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 8px 0 0 8px; 
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto de brillo cuando hace click para escribir */
+.buscador-global input:focus {
+    box-shadow: 0 0 15px var(--color-texto);
+}
+
+.buscador-global button {
+    background-color: #0b0f19;
+    border: 2px solid var(--color-texto);
+    color: #00ffcc;
+    padding: 0 16px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Efecto mouse */
+.buscador-global button:hover {
+    background-color: var(--color-borde2); 
+    color: #0b0f19;
+    box-shadow: 0 0 15px var(--color-texto);
 }

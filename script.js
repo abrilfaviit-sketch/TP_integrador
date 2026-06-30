@@ -84,7 +84,13 @@ function mostrarConsejoAleatorio(lista, elementoDestino) {
     elementoDestino.textContent = `💡 Consejo de campo: "${lista[indiceAleatorio]}"`;
 }
 
-
+/*evento: Buscador principal en tiempo real (keyup)*/
+    const inputBuscar = document.getElementById("buscador-global");
+    if (inputBuscar) {
+        inputBuscar.addEventListener("keyup", () => {
+            ejecutarBusquedaGlobal(inputBuscar.value.toLowerCase());
+        });
+    }
 
 
 /*validación y manejo de errores (formulario contacto)*/
@@ -150,6 +156,24 @@ function filtrarEnemigos(tipoVillano) {
             articulo.style.display = "block"; /* Se muestra (Estilo en línea)*/
         } else {
             articulo.style.display = "none";  /*Se oculta (Estilo en línea)*/
+        }
+    });
+}
+
+/*Lupita*/
+function ejecutarBusquedaGlobal(palabraClave) {
+    /*Pongo todos los artículos y bloques grandes de contenido del manual*/
+    const bloquesContenido = document.querySelectorAll(".contenido-manual article, .panel-consejos");
+
+    bloquesContenido.forEach(bloque => {
+        /*Paso todo el texto del bloque a minúsculas para que no importen las mayúsculas*/
+        const textoBloque = bloque.textContent.toLowerCase();
+
+        /* Si el bloque tiene la palabra (o si el buscador está vacío) se muestra*/
+        if (textoBloque.includes(palabraClave)) {
+            bloque.style.display = ""; /*Vuelve a su estado visible original por CSS*/
+        } else {
+            bloque.style.display = "none"; /*Oculta el bloque que no coincide*/
         }
     });
 }
