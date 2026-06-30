@@ -30,11 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function inicializarLogin() {
     const formularioLogin = document.querySelector(".formulario-inicio");
     
-    /*primer evento: submit */
     if (formularioLogin) {
         formularioLogin.addEventListener("submit", () => {
             const usuario = document.getElementById("usuario").value;
-            /*Se guarda el nombre en el almacenamiento local para usarlo en el manual*/
             localStorage.setItem("nombreAgente", usuario);
         });
     }
@@ -43,11 +41,9 @@ function inicializarLogin() {
 
 /*Manual principal y funcionalidad dinamica*/
 function inicializarManual() {
-    /*Reemplaza el texto introductorio con el nombre del usuario*/
     const nombreGuardado = localStorage.getItem("nombreAgente") || "Agente Anónimo";
     const bajadaTexto = document.querySelector(".bajada-texto");
     
-    /*DOM 1: modifica el texto de bienvenida personalizado*/
     if (bajadaTexto) {
         bajadaTexto.innerHTML = `Bienvenida/o, <strong>Agente ${nombreGuardado}</strong>. En un mundo de apuntes infinitos, solo los mejores sobreviven.`;
     }
@@ -56,7 +52,6 @@ function inicializarManual() {
     const panelConsejos = document.querySelector(".panel-consejos");
     
     if (panelConsejos) {
-        // DOM 2: Crear elementos dinámicamente*/
         const botonConsejo = document.createElement("button");
         botonConsejo.textContent = "GENERAR CONSEJO DE MISIÓN ALEATORIO";
         botonConsejo.className = "btn-mision"; 
@@ -70,12 +65,33 @@ function inicializarManual() {
         panelConsejos.appendChild(botonConsejo);
         panelConsejos.appendChild(contenedorTextoConsejo);
 
-        // Segundo evento: click (Para disparar la función del array)*/
         botonConsejo.addEventListener("click", () => {
-            /*Invoca a otra función pasándole el array*/
             mostrarConsejoAleatorio(consejosSupervivencia, contenedorTextoConsejo);
         });
     }
+
+    /* Evento: Buscador principal en tiempo real (keyup)*/
+    const inputBuscar = document.getElementById("buscador-global");
+    if (inputBuscar) {
+        inputBuscar.addEventListener("keyup", () => {
+            ejecutarBusquedaGlobal(inputBuscar.value.toLowerCase());
+        });
+    }
+
+    /* Evento: Botón del Calculador Académico */
+    const btnCalcular = document.getElementById("btn-calcular-estado");
+    if (btnCalcular) {
+        btnCalcular.addEventListener("click", calcularEstadoAcademico);
+    }
+
+    /* Escuchador para los botones de filtro de villanos*/
+    const botonesFiltro = document.querySelectorAll(".btn-filtro");
+    botonesFiltro.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const categoria = boton.getAttribute("data-villano");
+            filtrarEnemigos(categoria);
+        });
+    });
 }
 
 /* Procesar y calcular índice aleatorio del array*/
@@ -84,26 +100,12 @@ function mostrarConsejoAleatorio(lista, elementoDestino) {
     elementoDestino.textContent = `💡 Consejo de campo: "${lista[indiceAleatorio]}"`;
 }
 
-/*evento: Buscador principal en tiempo real (keyup)*/
-    const inputBuscar = document.getElementById("buscador-global");
-    if (inputBuscar) {
-        inputBuscar.addEventListener("keyup", () => {
-            ejecutarBusquedaGlobal(inputBuscar.value.toLowerCase());
-        });
-        /* Evento: Botón del Calculador Académico*/
-    const btnCalcular = document.getElementById("btn-calcular-estado");
-    if (btnCalcular) {
-        btnCalcular.addEventListener("click", calcularEstadoAcademico);
-    }
-    }
-
 
 /*validación y manejo de errores (formulario contacto)*/
 function inicializarContacto() {
     const formularioContacto = document.querySelector("#contacto form");
     const inputCelular = document.querySelector("input[type='tel']");
 
-    /*Tercer evento: input (Detecta cuando el usuario escriba en tiempo real)*/
     if (inputCelular) {
         inputCelular.addEventListener("input", () => {
             inputCelular.value = inputCelular.value.replace(/[^0-9]/g, '');
@@ -114,7 +116,6 @@ function inicializarContacto() {
         formularioContacto.addEventListener("submit", (e) => {
             e.preventDefault(); 
 
-            /*validación y manejo de errores*/
             try {
                 const nombre = formularioContacto.querySelector("input[placeholder='Ingrese su nombre']").value.trim();
                 const apellido = formularioContacto.querySelector("input[placeholder='Ingrese su apellido']").value.trim();
@@ -138,19 +139,9 @@ function inicializarContacto() {
     }
 }
 
-/*Aca va la interacción con los villanos*/
 
-/*Escuchador para los botones de filtro (Poné esto dentro de donde inicializás el manual)*/
-const botonesFiltro = document.querySelectorAll(".btn-filtro");
-botonesFiltro.forEach(boton => {
-    /*evento Click en los botones de filtro*/
-    boton.addEventListener("click", () => {
-        const categoria = boton.getAttribute("data-villano");
-        filtrarEnemigos(categoria);
-    });
-});
+/* Funciones de Soporte */
 
-/* Función encargada de ocultar o mostrar los artículos usando estilos en línea*/
 function filtrarEnemigos(tipoVillano) {
     const articulosVillanos = document.querySelectorAll(".bloque-villano");
     
@@ -158,40 +149,33 @@ function filtrarEnemigos(tipoVillano) {
         const tipoArticulo = articulo.getAttribute("data-tipo");
         
         if (tipoVillano === "todos" || tipoArticulo === tipoVillano) {
-            articulo.style.display = "block"; /* Se muestra (Estilo en línea)*/
+            articulo.style.display = "block"; 
         } else {
-            articulo.style.display = "none";  /*Se oculta (Estilo en línea)*/
+            articulo.style.display = "none";  
         }
     });
 }
 
-/*Lupita*/
 function ejecutarBusquedaGlobal(palabraClave) {
-    /*Pongo todos los artículos y bloques grandes de contenido del manual*/
     const bloquesContenido = document.querySelectorAll(".contenido-manual article, .panel-consejos, .seccion-calculador");
 
     bloquesContenido.forEach(bloque => {
-        /*Paso todo el texto del bloque a minúsculas para que no importen las mayúsculas*/
         const textoBloque = bloque.textContent.toLowerCase();
 
-        /* Si el bloque tiene la palabra (o si el buscador está vacío) se muestra*/
         if (textoBloque.includes(palabraClave)) {
-            bloque.style.display = ""; /*Vuelve a su estado visible original por CSS*/
+            bloque.style.display = ""; 
         } else {
-            bloque.style.display = "none"; /*Oculta el bloque que no coincide*/
+            bloque.style.display = "none"; 
         }
     });
 }
 
-/*Boton de calcular promedio*/
 function calcularEstadoAcademico() {
-    /* Para capturar los valores de los inputs y los paso a números reales*/
     const nota1 = parseFloat(document.getElementById("nota-parcial1").value);
     const nota2 = parseFloat(document.getElementById("nota-parcial2").value);
     const asistencia = parseFloat(document.getElementById("porcentaje-asistencia").value);
     const cajaResultado = document.getElementById("resultado-estado");
 
-    /* Verifica que el usuario haya completado todos los campos correctamente*/
     if (isNaN(nota1) || isNaN(nota2) || isNaN(asistencia) || 
         nota1 < 1 || nota1 > 10 || nota2 < 1 || nota2 > 10 || asistencia < 0 || asistencia > 100) {
         
@@ -203,10 +187,8 @@ function calcularEstadoAcademico() {
         return; 
     }
 
-    /*Calculo el promedio de los dos parciales*/
     const promedio = (nota1 + nota2) / 2;
 
-    /* Se evalua el estado según las reglas del manual*/
     let estadoFinal = "";
     let colorTexto = "";
     let colorFondo = "";
@@ -229,7 +211,6 @@ function calcularEstadoAcademico() {
         colorBorde = "#ff4a4a";
     }
 
-    /* Se muestra el resultado en la pantalla del manual*/
     cajaResultado.style.display = "block";
     cajaResultado.style.color = colorTexto;
     cajaResultado.style.backgroundColor = colorFondo;
@@ -237,14 +218,12 @@ function calcularEstadoAcademico() {
     cajaResultado.textContent = estadoFinal;
 }
 
-/*Para el medidor de estudio*/
-/*le tuve que poner un escuchador independiente, ya que si estaba arriba en inicializarManual no funcionaba*/
+/* Escuchador independiente para el medidor de estudio (Contacto) */
 document.addEventListener("DOMContentLoaded", function() {
     const barraNivel = document.getElementById("nivel-preparacion");
     const cajaMensaje = document.getElementById("mensaje-preparacion");
 
     if (barraNivel && cajaMensaje) {
-        /* Para que escuche el movimiento en tiempo real*/
         barraNivel.addEventListener("input", function() {
             const valor = parseInt(barraNivel.value);
 
@@ -259,8 +238,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 cajaMensaje.style.color = "#ff4a4a"; 
             }
         });
-
-        /* Ejecuta una vez al cargar para que muestre el mensaje inicial (50%)*/
         barraNivel.dispatchEvent(new Event("input"));
     }
 });
